@@ -1,15 +1,16 @@
-const getWatchList = () => {
-    return JSON.parse( localStorage.getItem('watchlist') )
+let watchlist = []
+const watchlistFromStorage = JSON.parse( localStorage.getItem('watchlist') )
+
+if(watchlistFromStorage){
+    watchlist = watchlistFromStorage
 }
 
 const addToStorage = item => {
-    let array = []
     const id = item.imdbID
-    array = getWatchList()
-    console.log(array)
+    console.log(watchlist)
     console.log(id)
-    // const itemToString = JSON.stringify(array.push(id))
-    // localStorage.setItem('watchlist', itemToString)
+    const itemToString = JSON.stringify(watchlist.push(id))
+    localStorage.setItem('watchlist', itemToString)
 }
 
 export { addToStorage, getWatchList }
