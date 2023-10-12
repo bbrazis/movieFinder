@@ -1,5 +1,6 @@
 const addToStorage = item => {
-    const array = getWatchList()
+    let array = []
+    array = getWatchList()
     const itemToString = JSON.stringify(array.push(item.imdbID))
     localStorage.setItem('watchlist', itemToString)
 }
