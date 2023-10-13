@@ -259,6 +259,7 @@ ul.movie-list {
     margin-block-start: 2.75em;
     list-style: none;
     padding: 0;
+    transition: display 200ms ease;
     
     & li {
         display: flex;
