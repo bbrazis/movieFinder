@@ -173,17 +173,24 @@ main {
         color: var(--gray);
         margin-inline-end: .5em;
     }
+
+    .search-input-wrapper label {
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
     
     .search-input-wrapper input {
         color: var(--dk-lgt-gray);
         width: 100%;
+        line-height: 2;
     }
     
     .search-input-wrapper {
         flex-grow: 1;
         display: flex;
         align-items: center;
-        padding: .5625em 0 .5625em 1em;
+        padding-block-start: 1em;
     }
     
     .search-btn-wrapper {
