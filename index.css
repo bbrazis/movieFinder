@@ -345,7 +345,7 @@ footer {
     }
 }
 
-@media (min-width: 68.75rem) {
+@media (min-width: 71rem) {
     ul.movie-list {
         display: grid;
         grid-template: max-content / repeat(2, 1fr);
@@ -361,7 +361,7 @@ footer {
     }
 
     main .searchbar-wrapper {
-        width: 68.75rem;
+        width: clamp(48rem,100%,68.75rem);
         margin-inline: auto;
     }
 }
