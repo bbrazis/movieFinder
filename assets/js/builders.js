@@ -1,4 +1,10 @@
-import { watchlist, addToStorage } from '/assets/js/localStore.js'
+import { addToStorage } from '/assets/js/localStore.js'
+
+let watchlist = []
+
+if(watchlistFromStorage){
+    watchlist = watchlistFromStorage
+}
 
 const fakeData = {
     Title: "The Dark Knight", 
