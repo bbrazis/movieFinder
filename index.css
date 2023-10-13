@@ -330,6 +330,10 @@ ul.movie-list {
         display: grid;
         grid-template: max-content / repeat(2, 1fr);
         grid-auto-rows: max-content;
+
+        & li:last-child {
+            border-bottom: 1px solid var(--lgt-gray);
+        }
     }
 }
 
