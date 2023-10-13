@@ -325,7 +325,13 @@ ul.movie-list {
     }
 }
 
-
+@media (min-width: 40rem) {
+    ul.movie-list {
+        display: grid;
+        grid-template: max-content / repeat(2, 1fr);
+        grid-auto-rows: max-content;
+    }
+}
 
 footer {
     position: fixed;
