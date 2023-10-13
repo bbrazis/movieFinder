@@ -260,7 +260,6 @@ ul.movie-list {
     display: grid;
     list-style: none;
     padding: 0;
-    transition: grid-template 200ms ease;
     
     & li {
         display: flex;
