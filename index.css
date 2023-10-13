@@ -331,8 +331,12 @@ ul.movie-list {
         grid-template: max-content / repeat(2, 1fr);
         grid-auto-rows: max-content;
 
+        & li:nth-child(odd) {
+            padding-inline-end: 1.5em;
+        }
+
         & li:last-child {
-            border-bottom: 1px solid var(--lgt-gray);
+            border-bottom: 1px solid var(--lgt-gray) !important;
         }
     }
 }
