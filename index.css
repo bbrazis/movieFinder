@@ -221,6 +221,11 @@ main {
     .main-load a {
         color: var(--text-color);
     }
+
+    .main-load a:hover svg,
+    .main-load:focus-within svg {
+        fill: var(--hover-color);
+    }
 }
 
 ul.movie-list {
