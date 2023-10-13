@@ -1,9 +1,5 @@
-let watchlist = []
-const watchlistFromStorage = JSON.parse( localStorage.getItem('watchlist') )
 
-if(watchlistFromStorage){
-    watchlist = watchlistFromStorage
-}
+const watchlistFromStorage = JSON.parse( localStorage.getItem('watchlist') )
 
 const addToStorage = (array,item) => {
     const id = item.imdbID
@@ -15,4 +11,4 @@ const addToStorage = (array,item) => {
     localStorage.setItem('watchlist', itemToString)
 }
 
-export { watchlist, addToStorage }
+export { addToStorage }
