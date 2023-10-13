@@ -69,7 +69,7 @@ function createListing(ul, item) {
     addBtn.append(plusIcon,hiddenSpan,'Watchlist')
     addBtn.id = `${item.imdbID}`
     addBtn.addEventListener('click', function(e){
-        addToStorage(item)
+        addToStorage(watchlist,item)
     })
     statDiv.append(duration,themes,addBtn)
     parentDiv.append(titleDiv,statDiv,description)
