@@ -293,6 +293,7 @@ ul.movie-list {
         display: flex;
         margin-block: .75rem;
         font-size: .75rem;
+        width: clamp(23.75rem,100%,28.75rem);
         justify-content: space-between;
         align-items: center;
         color: var(--dark-gray);
