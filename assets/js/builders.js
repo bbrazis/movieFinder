@@ -1,6 +1,7 @@
 import { addToStorage } from '/assets/js/localStore.js'
 
 let watchlist = []
+const watchlistFromStorage = JSON.parse( localStorage.getItem('watchlist') )
 
 if(watchlistFromStorage){
     watchlist = watchlistFromStorage
