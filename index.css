@@ -325,7 +325,7 @@ ul.movie-list {
     }
 }
 
-@media (min-width: 40rem) {
+@media (min-width: 68.75rem) {
     ul.movie-list {
         display: grid;
         grid-template: max-content / repeat(2, 1fr);
