@@ -325,6 +325,19 @@ ul.movie-list {
     }
 }
 
+footer {
+    position: fixed;
+    inset: auto 0 0;
+    text-align: center;
+    padding-block: 1.5em;
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    
+    & p {
+        font-size: .75rem;
+    }
+}
+
 @media (min-width: 68.75rem) {
     ul.movie-list {
         display: grid;
@@ -339,17 +352,9 @@ ul.movie-list {
             border-bottom: 1px solid var(--lgt-gray) !important;
         }
     }
-}
 
-footer {
-    position: fixed;
-    inset: auto 0 0;
-    text-align: center;
-    padding-block: 1.5em;
-    background-color: var(--text-color);
-    color: var(--bg-color);
-    
-    & p {
-        font-size: .75rem;
+    main .searchbar-wrapper {
+        width: 68.75rem;
+        margin-inline: auto;
     }
 }
