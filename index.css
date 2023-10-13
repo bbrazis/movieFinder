@@ -39,6 +39,19 @@ body {
 
 img {
     max-width: 100%;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -o-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    -ms-user-drag: none;
+    user-drag: none;
 }
 
 a {
@@ -221,6 +234,8 @@ main {
     .main-load a {
         color: var(--text-color);
     }
+
+    .main-load a svg { transition: color 200ms ease; }
 
     .main-load a:hover svg,
     .main-load:focus-within svg {
