@@ -1,4 +1,4 @@
-import { addToStorage } from '/assets/js/localStore.js'
+import { watchlist, addToStorage } from '/assets/js/localStore.js'
 
 const fakeData = {
     Title: "The Dark Knight", 
