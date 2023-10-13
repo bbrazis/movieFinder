@@ -224,7 +224,7 @@ main {
 
     .main-load a:hover svg,
     .main-load:focus-within svg {
-        fill: var(--hover-color);
+        color: var(--hover-color);
     }
 }
 
