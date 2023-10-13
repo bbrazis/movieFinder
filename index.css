@@ -305,6 +305,15 @@ ul.movie-list {
         align-items: center;
         color: var(--dark-gray);
         
+        & p:first-child {
+            width: 3.75rem;
+            margin-inline-end: 1.5em;
+        }
+
+        & p:nth-child(2) {
+            flex-grow: 1;
+        }
+
         & button {
             background: none;
             border: none;
