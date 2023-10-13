@@ -7,9 +7,9 @@ if(watchlistFromStorage){
 
 const addToStorage = item => {
     const id = item.imdbID
-    console.log(watchlist)
+    const itemToAdd = watchlist.push(id)
     console.log(id)
-    const itemToString = JSON.stringify(watchlist.push(id))
+    const itemToString = JSON.stringify(itemToAdd)
     localStorage.setItem('watchlist', itemToString)
 }
 
