@@ -13,4 +13,4 @@ const addToStorage = item => {
     localStorage.setItem('watchlist', itemToString)
 }
 
-export { addToStorage }
+export { watchlist, addToStorage }
