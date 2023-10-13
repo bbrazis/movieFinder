@@ -217,6 +217,10 @@ main {
         gap: .5625rem;
         color: #dfdddd;
     }
+
+    .main-load a {
+        color: var(--text-color);
+    }
 }
 
 ul.movie-list {
