@@ -1,5 +1,6 @@
 const addToStorage = (array,item) => {
     // const id = item.imdbID
+    array = []
     const index = array.length + 1
     const obj = {item}
     const itemToAdd = array.push(JSON.stringify(obj))
