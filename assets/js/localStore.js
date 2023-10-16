@@ -10,7 +10,7 @@ const addToStorage = (array,item) => {
 }
 
 const removeFromStorage = (array) => {
-    const id = e.target.id
+    const id = this.target.id
     // const itemToRemove = watchlist.filter(movie => movie.imdbID === id)[0]
     for (let [index, movie] of array.entries) {
         if(movie.imdbID === id){
