@@ -1,6 +1,6 @@
 const addToStorage = (array,item) => {
-    const filter = array.filter(movie => movie === item)[0]
-    if(!filter){
+    const filter = array.filter(movie => movie.Title === item.Title)[0]
+    if(!array.includes(filter)){
         array.push(item)
         const itemToAdd = array
         localStorage.setItem('watchlist', JSON.stringify(itemToAdd))
