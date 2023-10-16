@@ -1,4 +1,5 @@
 import { addToStorage, removeFromStorage } from '/assets/js/localStore.js'
+import { initializeWatchList } from '/assets/js/watchlist.js'
 
 let watchlist = []
 const watchlistFromStorage = JSON.parse( localStorage.getItem('watchlist') )
@@ -108,6 +109,7 @@ function createWatchlist(ul, item) {
     removeBtn.addEventListener('click', function(e) {
         const id = e.target.id
         removeFromStorage(watchlist, id)
+        initializeWatchList()
     })
     statDiv.append(duration,themes,removeBtn)
     parentDiv.append(titleDiv,statDiv,description)

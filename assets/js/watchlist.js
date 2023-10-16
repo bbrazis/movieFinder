@@ -20,3 +20,5 @@ const initializeWatchList = () => {
 }
 
 initializeWatchList()
+
+export { initializeWatchList }
