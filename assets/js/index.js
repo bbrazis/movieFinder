@@ -4,10 +4,10 @@ import { key, url } from '/assets/js/yek.js'
 const searchForm = document.getElementById('movie-search')
 const movieList = document.getElementById('movie-list')
 
-async function populateByIndex(id,fn) {
+async function populateByIndex(list,id,fn) {
     const response = await fetch(`${url}&i=${id}`)
     const data = await response.json()
-    fn(movieList, data)
+    fn(list, data)
 }
 if(searchForm){
     searchForm.addEventListener('submit', async function(e) {
@@ -28,17 +28,17 @@ if(searchForm){
     })
 }
 
-const initializeList = async (list) => {
-    list.innerHTML = ''
+const initializeList = async () => {
+    movieList.innerHTML = ''
     const placeholder = document.querySelector('.main-load')
     placeholder.classList.add('display-none')
     const res = await fetch(`${url}&s=Pokemon`)
     const data = await res.json()
     for(let item of data.Search){
-        populateByIndex(item.imdbID,createListing)
+        populateByIndex(movieList,item.imdbID,createListing)
     }
 }
 
-setTimeout(initializeList(movieList), 500)
+setTimeout(initializeList, 500)
 
 export { populateByIndex }
