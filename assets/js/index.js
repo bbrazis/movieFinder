@@ -28,10 +28,17 @@ const initializeList = async () => {
     movieList.innerHTML = ''
     const placeholder = document.querySelector('.main-load')
     placeholder.classList.add('display-none')
-    const res = await fetch(`${url}&s=Pokemon`)
-    const data = await res.json()
-    for(let item of data.Search){
-        populateByIndex(movieList,item.imdbID,createListing)
+    try{
+        const res = await fetch(`${url}&s=Pokemon`)
+        const data = await res.json()
+        for(let item of data.Search){
+            populateByIndex(movieList,item.imdbID,createListing)
+        }
+    } catch (error) {
+        console.error(error)
+    }
+    if (movieList.innerHTML = '') {
+        placeholder.classList.remove('display-none')
     }
 }
 
