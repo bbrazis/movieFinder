@@ -10,7 +10,7 @@ const initializeList = async () => {
     placeholder.classList.add('display-none')
     
     for(let item of watchlist){
-        populateByIndex(item.imdbID)
+        populateByIndex(item.imdbID,createWatchlist)
     }
 }
 
