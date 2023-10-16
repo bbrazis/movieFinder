@@ -1,14 +1,9 @@
 import { createElTag, createImgTag, createListing } from '/assets/js/builders.js'
 import { key, url } from '/assets/js/yek.js'
+import { populateByIndex } from '/assets/js/api.js'
 
 const searchForm = document.getElementById('movie-search')
 const movieList = document.getElementById('movie-list')
-
-async function populateByIndex(list,id,fn) {
-    const response = await fetch(`${url}&i=${id}`)
-    const data = await response.json()
-    fn(list, data)
-}
 
 if(searchForm){
     searchForm.addEventListener('submit', async function(e) {
