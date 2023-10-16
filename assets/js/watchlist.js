@@ -17,6 +17,10 @@ const initializeWatchList = () => {
     for(let movie of watchlist){
         populateByIndex(movieList, movie.imdbID, createWatchlist)
     }
+
+    if(watchlist.length < 1) {
+        placeholder.classList.remove('display-none')
+    }
 }
 
 initializeWatchList()
