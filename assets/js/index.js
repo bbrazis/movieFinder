@@ -9,23 +9,24 @@ async function populateByIndex(id,fn) {
     const data = await response.json()
     fn(movieList, data)
 }
-
-searchForm.addEventListener('submit', async function(e) {
-    e.preventDefault()
-    try {
-        const value = document.getElementById('searchbar').value
-        const res = await fetch(`${url}&s=${value}`)
-        const data = await res.json()
-        movieList.innerHTML = ''
-        
-        for(let item of data.Search){
-            populateByIndex(item.imdbID)
+if(searchForm){
+    searchForm.addEventListener('submit', async function(e) {
+        e.preventDefault()
+        try {
+            const value = document.getElementById('searchbar').value
+            const res = await fetch(`${url}&s=${value}`)
+            const data = await res.json()
+            movieList.innerHTML = ''
+            
+            for(let item of data.Search){
+                populateByIndex(item.imdbID)
+            }
+            
+        } catch (error) {
+            console.error(error)
         }
-        
-    } catch (error) {
-        console.error(error)
-    }
-})
+    })
+}
 
 const initializeList = async () => {
     movieList.innerHTML = ''
