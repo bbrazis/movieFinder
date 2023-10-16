@@ -3,12 +3,14 @@ import { populateByIndex } from '/assets/js/api.js'
 
 const movieList = document.getElementById('movie-list')
 
+let myWatchList = watchlist
+
 const initializeWatchList = () => {
     movieList.innerHTML = ''
     const placeholder = document.querySelector('.main-load')
     placeholder.classList.add('display-none')
     
-    for(let movie of watchlist){
+    for(let movie of myWatchList){
         populateByIndex(movieList, movie.imdbID, createWatchlist)
     }
 
