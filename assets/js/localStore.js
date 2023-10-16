@@ -3,9 +3,9 @@ const addToStorage = (array,item) => {
     const itemToAdd = array.push(item)
     console.log(item)
     console.log(itemToAdd)
-    const itemToString = JSON.stringify(itemToAdd)
+    const itemToString = JSON.stringify({name: 'name'})
     console.log(itemToString)
-    localStorage.setItem('watchlist', itemToString)
+    // localStorage.setItem('watchlist', itemToString)
 }
 
 export { addToStorage }
