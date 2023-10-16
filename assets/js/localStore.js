@@ -1,4 +1,4 @@
-import { watchlist } from "assets/js/builders.js"
+import { watchlist } from "/assets/js/builders.js"
 
 const addToStorage = (array,item) => {
     const filter = array.filter(movie => movie.Title === item.Title)[0]
