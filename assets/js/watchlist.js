@@ -15,7 +15,7 @@ const initializeWatchList = () => {
     const placeholder = document.querySelector('.main-load')
     placeholder.classList.add('display-none')
     
-    for(let movie of watchList){
+    for(let movie of watchlist){
         populateByIndex(movieList, movie.imdbID, createWatchlist)
     }
 
