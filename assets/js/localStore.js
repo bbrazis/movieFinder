@@ -4,6 +4,8 @@ const addToStorage = (array,item) => {
         array.push(item)
         const itemToAdd = array
         localStorage.setItem('watchlist', JSON.stringify(itemToAdd))
+    } else {
+        alert(`Sorry, ${item.Title} is already on your Watchlist`)
     }
 }
 
