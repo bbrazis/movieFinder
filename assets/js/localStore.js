@@ -13,6 +13,8 @@ const removeFromStorage = (array, id) => {
     console.log(id)
     const itemToRemove = array.filter(movie => movie.imdbID === id)[0]
     console.log(itemToRemove)
+    const index = array.indexOf(itemToRemove)
+    console.log(index)
     // for (let [index, movie] of array) {
     //     if(movie.imdbID === id){
     //         array.splice(index, 1)
