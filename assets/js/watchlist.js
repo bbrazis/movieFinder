@@ -4,7 +4,7 @@ import { key, url } from '/assets/js/yek.js'
 
 const movieList = document.getElementById('movie-list')
 
-const initializeList = async () => {
+const initializeWatchList = async () => {
     movieList.innerHTML = ''
     const placeholder = document.querySelector('.main-load')
     placeholder.classList.add('display-none')
@@ -14,4 +14,4 @@ const initializeList = async () => {
     }
 }
 
-initializeList()
+initializeWatchList()
