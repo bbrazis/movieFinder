@@ -1,13 +1,7 @@
 import { createWatchlist, watchlist } from '/assets/js/builders.js'
-import { key, url } from '/assets/js/yek.js'
+import { populateByIndex } from '/assets/js/api.js'
 
 const movieList = document.getElementById('movie-list')
-
-async function populateByIndex(list,id,fn) {
-    const response = await fetch(`${url}&i=${id}`)
-    const data = await response.json()
-    fn(list, data)
-}
 
 const initializeWatchList = () => {
     movieList.innerHTML = ''
