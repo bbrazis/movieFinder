@@ -41,4 +41,4 @@ const initializeList = async (list) => {
 
 setTimeout(initializeList(movieList), 500)
 
-export default { populateByIndex }
+export { populateByIndex }
