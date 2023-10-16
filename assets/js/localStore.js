@@ -1,12 +1,9 @@
 const addToStorage = (array,item) => {
     // const id = item.imdbID
-    array = []
-    const index = array.length + 1
-    const obj = {item}
-    const itemToAdd = array.push(JSON.stringify(obj))
+    const itemToAdd = array.concat([item])
     console.log(item)
     console.log(itemToAdd)
-    const itemToString = JSON.parse(itemToAdd)
+    const itemToString = JSON.stringify(itemToAdd)
     console.log(itemToString)
     // localStorage.setItem('watchlist', itemToString)
 }
