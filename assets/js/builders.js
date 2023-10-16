@@ -1,12 +1,12 @@
 import { addToStorage, removeFromStorage } from '/assets/js/localStore.js'
-import { initializeWatchList } from '/assets/js/watchlist.js'
+import { watchlist, initializeWatchList } from '/assets/js/watchlist.js'
 
-let watchlist = []
-const watchlistFromStorage = JSON.parse( localStorage.getItem('watchlist') )
+// let watchlist = []
+// const watchlistFromStorage = JSON.parse( localStorage.getItem('watchlist') )
 
-if(watchlistFromStorage){
-    watchlist = watchlistFromStorage
-}
+// if(watchlistFromStorage){
+//     watchlist = watchlistFromStorage
+// }
 
 function createElTag(tagName, tagClass, tagText) {
     const myElement = document.createElement(tagName)
