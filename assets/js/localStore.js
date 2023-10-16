@@ -1,7 +1,7 @@
 const addToStorage = (array,item) => {
-    const id = item.imdbID
-    const itemToAdd = array.push(id)
-    console.log(id)
+    // const id = item.imdbID
+    const itemToAdd = array.push(item)
+    console.log(item)
     console.log(itemToAdd)
     const itemToString = JSON.stringify(itemToAdd)
     console.log(itemToString)
