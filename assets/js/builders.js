@@ -105,7 +105,9 @@ function createWatchlist(ul, item) {
     titleDiv.append(h2,starIcon,rating)
     removeBtn.append(minusIcon,'Remove',hiddenSpan)
     removeBtn.id = `${item.imdbID}`
-    removeBtn.addEventListener('click', (e) => removeFromStorage)
+    removeBtn.addEventListener('click', function(e) {
+        removeFromStorage
+    })
     statDiv.append(duration,themes,removeBtn)
     parentDiv.append(titleDiv,statDiv,description)
     li.append(movieImg,parentDiv)
