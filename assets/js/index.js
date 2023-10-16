@@ -15,7 +15,7 @@ if(searchForm){
             movieList.innerHTML = ''
             
             for(let item of data.Search){
-                populateByIndex(item.imdbID)
+                populateByIndex(movieList,item.imdbID,createListing)
             }
             
         } catch (error) {
