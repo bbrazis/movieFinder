@@ -9,6 +9,7 @@ async function populateByIndex(list,id,fn) {
     const data = await response.json()
     fn(list, data)
 }
+
 if(searchForm){
     searchForm.addEventListener('submit', async function(e) {
         e.preventDefault()
