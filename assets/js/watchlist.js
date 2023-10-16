@@ -1,4 +1,4 @@
-import { createWatchlist, watchlist } from '/assets/js/builders.js'
+import { watchlist, createWatchlist } from '/assets/js/builders.js'
 import { populateByIndex } from '/assets/js/api.js'
 
 const movieList = document.getElementById('movie-list')
