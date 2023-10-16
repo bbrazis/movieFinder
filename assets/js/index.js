@@ -13,7 +13,7 @@ if(searchForm){
             const res = await fetch(`${url}&s=${value}`)
             const data = await res.json()
             movieList.innerHTML = ''
-            
+            value = ''
             for(let item of data.Search){
                 populateByIndex(movieList,item.imdbID,createListing)
             }
