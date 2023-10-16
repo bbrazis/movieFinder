@@ -28,8 +28,8 @@ if(searchForm){
     })
 }
 
-const initializeList = async () => {
-    movieList.innerHTML = ''
+const initializeList = async (list) => {
+    list.innerHTML = ''
     const placeholder = document.querySelector('.main-load')
     placeholder.classList.add('display-none')
     const res = await fetch(`${url}&s=Pokemon`)
@@ -39,6 +39,6 @@ const initializeList = async () => {
     }
 }
 
-// setTimeout(initializeList, 500)
+setTimeout(initializeList(movieList), 500)
 
 export default { populateByIndex }
