@@ -4,14 +4,14 @@ import { key, url } from '/assets/js/yek.js'
 
 const movieList = document.getElementById('movie-list')
 
-const initializeWatchList = async () => {
-    movieList.innerHTML = ''
-    const placeholder = document.querySelector('.main-load')
-    placeholder.classList.add('display-none')
+// const initializeWatchList = async () => {
+//     movieList.innerHTML = ''
+//     const placeholder = document.querySelector('.main-load')
+//     placeholder.classList.add('display-none')
     
-    for(let movie of watchlist){
-        populateByIndex(movie.imdbID, createWatchlist)
-    }
-}
+//     for(let movie of watchlist){
+//         populateByIndex(movie.imdbID, createWatchlist)
+//     }
+// }
 
-initializeWatchList()
+// initializeWatchList()
