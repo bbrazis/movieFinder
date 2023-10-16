@@ -1,6 +1,6 @@
 const addToStorage = (array,item) => {
-    const itemToAdd = array.concat([item])
-    console.log(item)
+    array = array.concat([item])
+    const itemToAdd = array
     console.log(itemToAdd)
     const itemToString = JSON.stringify(itemToAdd)
     console.log(itemToString)
