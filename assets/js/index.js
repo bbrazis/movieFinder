@@ -9,11 +9,11 @@ if(searchForm){
     searchForm.addEventListener('submit', async function(e) {
         e.preventDefault()
         try {
-            const value = document.getElementById('searchbar').value
-            const res = await fetch(`${url}&s=${value}`)
+            const valueEl = document.getElementById('searchbar')
+            const res = await fetch(`${url}&s=${valueEl.value}`)
             const data = await res.json()
             movieList.innerHTML = ''
-            value = ''
+            valueEl.value = ''
             for(let item of data.Search){
                 populateByIndex(movieList,item.imdbID,createListing)
             }
