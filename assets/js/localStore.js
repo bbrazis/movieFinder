@@ -1,3 +1,5 @@
+import { watchlist } from "./builders"
+
 const addToStorage = (array,item) => {
     const filter = array.filter(movie => movie.Title === item.Title)[0]
     if(!array.includes(filter)){
@@ -9,4 +11,15 @@ const addToStorage = (array,item) => {
     }
 }
 
-export { addToStorage }
+const removeFromStorage = () => {
+    const id = e.target.id
+    // const itemToRemove = watchlist.filter(movie => movie.imdbID === id)[0]
+    for (let [index, movie] of watchlis.entries) {
+        if(movie.imdbID === id){
+            watchlist.splice(index, 1)
+            localStorage.setItem('watchlist', JSON.stringify(watchlist))
+        }
+    }
+}
+
+export { addToStorage, removeFromStorage }

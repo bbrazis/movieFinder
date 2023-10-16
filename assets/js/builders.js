@@ -1,4 +1,4 @@
-import { addToStorage } from '/assets/js/localStore.js'
+import { addToStorage, removeFromStorage } from '/assets/js/localStore.js'
 
 let watchlist = []
 const watchlistFromStorage = JSON.parse( localStorage.getItem('watchlist') )
@@ -105,6 +105,7 @@ function createWatchlist(ul, item) {
     titleDiv.append(h2,starIcon,rating)
     removeBtn.append(minusIcon,'Remove',hiddenSpan)
     removeBtn.id = `${item.imdbID}`
+    removeBtn.addEventListener('click', removeFromStorage)
     statDiv.append(duration,themes,removeBtn)
     parentDiv.append(titleDiv,statDiv,description)
     li.append(movieImg,parentDiv)
