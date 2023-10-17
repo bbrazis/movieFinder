@@ -1,5 +1,5 @@
-import { createElTag, createImgTag, createListing } from '/assets/js/builders.js'
-import { key, url } from '/assets/js/yek.js'
+import { createListing } from '/assets/js/builders.js'
+import { url } from '/assets/js/yek.js'
 import { populateByIndex } from '/assets/js/api.js'
 
 const searchForm = document.getElementById('movie-search')
@@ -43,5 +43,3 @@ const initializeList = async () => {
 }
 
 setTimeout(initializeList, 500)
-
-export { populateByIndex }

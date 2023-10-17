@@ -1,13 +1,6 @@
 import { addToStorage, removeFromStorage } from '/assets/js/localStore.js'
 import { watchlist, initializeWatchList } from '/assets/js/watchlist.js'
 
-// let watchlist = []
-// const watchlistFromStorage = JSON.parse( localStorage.getItem('watchlist') )
-
-// if(watchlistFromStorage){
-//     watchlist = watchlistFromStorage
-// }
-
 function createElTag(tagName, tagClass, tagText) {
     const myElement = document.createElement(tagName)
     myElement.classList = tagClass
@@ -86,4 +79,4 @@ function createWatchlist(ul, item) {
     ul.append(li)
 }
 
-export { createElTag, createImgTag, createListing, createWatchlist, watchlist }
+export { createElTag, createImgTag, createListing, createWatchlist }
