@@ -15,7 +15,7 @@ if(searchForm){
                 const data = await res.json()
                 movieList.innerHTML = ''
                 valueEl.value = ''
-                if(data.Response){
+                if(data.Response === true){
                     for(let item of data.Search){
                         populateListingByIndex(movieList,item.imdbID)
                     }
