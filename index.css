@@ -364,8 +364,9 @@ footer {
             padding-inline-end: 1.5em;
         }
 
-        & li:last-child {
-            border-bottom: 1px solid var(--lgt-gray) !important;
+        & li:last-child,
+        & li:nth-last-child(2) {
+            border-bottom: none;
         }
     }
 
