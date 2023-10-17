@@ -1,4 +1,4 @@
-import { populateWatchlistByIndex } from '/assets/js/api.js'
+import { populateWatchlistByIndex } from '/assets/js/builders.js'
 
 let movieList = ''
 

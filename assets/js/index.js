@@ -1,5 +1,5 @@
 import { url } from '/assets/js/yek.js'
-import { populateListingByIndex } from '/assets/js/api.js'
+import { populateListingByIndex } from '/assets/js/builders.js'
 
 const searchForm = document.getElementById('movie-search')
 const movieList = document.getElementById('movie-list')

@@ -1,5 +1,34 @@
-import { addToStorage, removeFromStorage } from '/assets/js/localStore.js'
 import { watchlist, initializeWatchList } from '/assets/js/watchlist.js'
+import { url } from '/assets/js/yek.js'
+
+const addToStorage = (array,item) => {
+    const filter = array.filter(movie => movie.Title === item.Title)[0]
+    if(!array.includes(filter)){
+        array.push(item)
+        localStorage.setItem('watchlist', JSON.stringify(array))
+    } else {
+        alert(`Sorry, ${item.Title} is already on your Watchlist`)
+    }
+}
+
+const removeFromStorage = (array, id) => {
+    const itemToRemove = array.filter(movie => movie.imdbID === id)[0]
+    const index = array.indexOf(itemToRemove)
+    array.splice(index,1)
+    localStorage.setItem('watchlist', JSON.stringify(array))
+}
+
+async function populateListingByIndex(list,id) {
+    const response = await fetch(`${url}&i=${id}`)
+    const data = await response.json()
+    createListing(list, data)
+}
+
+async function populateWatchlistByIndex(list,id) {
+    const response = await fetch(`${url}&i=${id}`)
+    const data = await response.json()
+    createWatchlist(list, data)
+}
 
 function createElTag(tagName, tagClass, tagText) {
     const myElement = document.createElement(tagName)
@@ -79,4 +108,4 @@ function createWatchlist(ul, item) {
     ul.append(li)
 }
 
-export { createListing, createWatchlist }
+export { createListing, createWatchlist, populateListingByIndex, populateWatchlistByIndex }
