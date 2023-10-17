@@ -1,7 +1,13 @@
 import { createWatchlist } from '/assets/js/builders.js'
 import { populateByIndex } from '/assets/js/api.js'
 
-const movieList = document.getElementById('watchlist')
+let movieList = ''
+
+if(document.getElementById('watchlist')){
+    movieList = document.getElementById('watchlist')
+} else {
+    movieList = document.getElementById('movie-list')
+}
 
 let watchlist = []
 const watchlistFromStorage = JSON.parse( localStorage.getItem('watchlist') )
