@@ -365,7 +365,7 @@ footer {
         }
 
         & li:last-child,
-        & li:nth-last-child(2) {
+        li:nth-last-child(2) {
             border-bottom: none;
         }
     }
