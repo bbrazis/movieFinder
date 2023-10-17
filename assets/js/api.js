@@ -1,9 +1,16 @@
 import { url } from '/assets/js/yek.js'
+import { createListing, createWatchlist } from '/assets/js/builders.js'
 
-async function populateByIndex(list,id,fn) {
+async function populateListingByIndex(list,id) {
     const response = await fetch(`${url}&i=${id}`)
     const data = await response.json()
-    fn(list, data)
+    createListing(list, data)
 }
 
-export { populateByIndex }
+async function populateWatchlistByIndex(list,id) {
+    const response = await fetch(`${url}&i=${id}`)
+    const data = await response.json()
+    createWatchlist(list, data)
+}
+
+export { populateListingByIndex, populateWatchlistByIndex }

@@ -79,4 +79,4 @@ function createWatchlist(ul, item) {
     ul.append(li)
 }
 
-export { createElTag, createImgTag, createListing, createWatchlist }
+export { createListing, createWatchlist }

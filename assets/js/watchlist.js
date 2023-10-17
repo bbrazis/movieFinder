@@ -1,5 +1,4 @@
-import { createWatchlist } from '/assets/js/builders.js'
-import { populateByIndex } from '/assets/js/api.js'
+import { populateWatchlistByIndex } from '/assets/js/api.js'
 
 let movieList = ''
 
@@ -22,7 +21,7 @@ const initializeWatchList = () => {
     placeholder.classList.add('display-none')
     
     for(let movie of watchlist){
-        populateByIndex(movieList, movie.imdbID, createWatchlist)
+        populateWatchlistByIndex(movieList, movie.imdbID)
     }
 
     if(watchlist.length < 1) {

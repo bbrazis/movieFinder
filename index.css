@@ -274,7 +274,6 @@ ul.movie-list {
     & img {
         border-radius: .25em;
         width: 99px;
-        object-fit: contain;
     }
     
     .movie-details {

@@ -1,23 +1,29 @@
-import { createListing } from '/assets/js/builders.js'
 import { url } from '/assets/js/yek.js'
-import { populateByIndex } from '/assets/js/api.js'
+import { populateListingByIndex } from '/assets/js/api.js'
 
 const searchForm = document.getElementById('movie-search')
 const movieList = document.getElementById('movie-list')
+const placeholder = document.querySelector('.main-load')
 
 if(searchForm){
     searchForm.addEventListener('submit', async function(e) {
         e.preventDefault()
         try {
             const valueEl = document.getElementById('searchbar')
-            const res = await fetch(`${url}&s=${valueEl.value}`)
-            const data = await res.json()
-            movieList.innerHTML = ''
-            valueEl.value = ''
-            for(let item of data.Search){
-                populateByIndex(movieList,item.imdbID,createListing)
+            if (valueEl.value){
+                const res = await fetch(`${url}&s=${valueEl.value}`)
+                const data = await res.json()
+                movieList.innerHTML = ''
+                valueEl.value = ''
+                if(data.Repsonse === 400){
+                    for(let item of data.Search){
+                        populateListingByIndex(movieList,item.imdbID)
+                    }
+                } else {
+                    placeholder.innerHTML = "Unable to find what you're looking for. Please try another search."
+                    placeholder.classList.remove('display-none')
+                }
             }
-            
         } catch (error) {
             console.error(error)
         }
@@ -26,13 +32,12 @@ if(searchForm){
 
 const initializeList = async () => {
     movieList.innerHTML = ''
-    const placeholder = document.querySelector('.main-load')
     placeholder.classList.add('display-none')
     try{
         const res = await fetch(`${url}&s=Pokemon`)
         const data = await res.json()
         for(let item of data.Search){
-            populateByIndex(movieList,item.imdbID,createListing)
+            populateListingByIndex(movieList, item.imdbID)
         }
     } catch (error) {
         console.error(error)
