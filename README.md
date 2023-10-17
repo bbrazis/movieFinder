@@ -1,4 +1,4 @@
-# cod194e6597e3e1a3e0d1a1b9
+# MovieFinder Solo Project
 
 Quick start:
 
