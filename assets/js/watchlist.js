@@ -29,6 +29,8 @@ const initializeWatchList = () => {
     }
 }
 
-initializeWatchList()
+if(!document.getElementById('searchbar')){
+    initializeWatchList()
+}
 
 export { watchlist, initializeWatchList }
