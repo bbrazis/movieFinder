@@ -47,4 +47,4 @@ const initializeList = async () => {
     }
 }
 
-setTimeout(initializeList, 500)
+// setTimeout(initializeList, 500)
