@@ -1,9 +1,10 @@
 import { url } from '/assets/js/yek.js'
-import { populateListingByIndex } from '/assets/js/builders.js'
+import { createElTag, createImgTag, createListing, populateListingByIndex } from '/assets/js/builders.js'
 
 const searchForm = document.getElementById('movie-search')
 const movieList = document.getElementById('movie-list')
 const placeholder = document.querySelector('.main-load')
+const loader = document.querySelector('.loader-wrapper')
 
 if(searchForm){
     searchForm.addEventListener('submit', async function(e) {
@@ -15,7 +16,12 @@ if(searchForm){
                 const data = await res.json()
                 movieList.innerHTML = ''
                 valueEl.value = ''
-                if(data.Response === 'True'){
+                placeholder.classList.add('display-none')
+                loader.classList.remove('display-none')
+                setTimeout(async function() {
+                    if(data.Response === "True"){
+                    placeholder.classList.add('display-none')
+                    loader.classList.add('display-none')
                     for(let item of data.Search){
                         populateListingByIndex(movieList,item.imdbID)
                     }
@@ -23,6 +29,8 @@ if(searchForm){
                     placeholder.innerHTML = "Unable to find what you're looking for. Please try another search."
                     placeholder.classList.remove('display-none')
                 }
+                }, 1000)
+                
             }
         } catch (error) {
             console.error(error)
@@ -31,19 +39,18 @@ if(searchForm){
 }
 
 const initializeList = async () => {
-    movieList.innerHTML = ''
-    placeholder.classList.add('display-none')
     try{
         const res = await fetch(`${url}&s=Pokemon`)
         const data = await res.json()
-        for(let item of data.Search){
-            populateListingByIndex(movieList, item.imdbID)
+        if(data.Response === 'True'){
+            movieList.innerHTML = ''
+            placeholder.classList.add('display-none')
+            for(let item of data.Search){
+                populateListingByIndex(movieList, item.imdbID)
+            }
         }
     } catch (error) {
         console.error(error)
-    }
-    if (movieList.innerHTML = '') {
-        placeholder.classList.remove('display-none')
     }
 }
 
