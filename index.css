@@ -65,8 +65,8 @@
 }
 
 *::selection {
-    background: var(--text-color);
-    color: var(--bg-color);
+    background: var(--hover-color);
+    color: var(--hover-text);
 }
 
 *,
