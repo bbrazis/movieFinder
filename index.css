@@ -13,6 +13,8 @@
     --lgt-gray: #d1d5db;
     --header-color: var(--white);
     --input-svg: var(--gray);
+    --input-placeholder: var(--dk-lgt-gray);
+    --input-color: var(--black);
     --input-bg: var(--bg-color);
     --input-border: var(--lgt-gray);
     --btn-border: var(--input-border);
@@ -47,6 +49,8 @@
         --text-color: var(--white);
         --movie-stats-color: var(--white);
         --input-bg: var(--dark-input);
+        --input-color: var(--white);
+        --input-placeholder: var(--dark-descr);
         --input-svg: var(--dark-svg);
         --input-border: var(--input-bg);
         --btn-bg: var(--dark-button);
@@ -225,24 +229,6 @@ main {
         background: var(--input-bg);
     }
     
-    .search-input-wrapper svg {
-        color: var(--input-svg);
-        margin-inline-end: .5em;
-    }
-
-    .search-input-wrapper label {
-        height: 100%;
-        display: flex;
-        align-items: center;
-    }
-    
-    .search-input-wrapper input {
-        color: var(--dk-lgt-gray);
-        width: 100%;
-        background: var(--input-bg);
-        line-height: 2;
-    }
-    
     .search-input-wrapper {
         flex-grow: 1;
         display: flex;
@@ -251,6 +237,28 @@ main {
         border: 1px solid var(--input-border);
         border-bottom-left-radius: .325em;
         border-top-left-radius: .325em;
+        
+        & input {
+            color: var(--input-color);
+            width: 100%;
+            background: var(--input-bg);
+            line-height: 2;
+        }
+        
+        & svg {
+            color: var(--input-svg);
+            margin-inline-end: .5em;
+        }
+        
+        & label {
+            height: 100%;
+            display: flex;
+            align-items: center;
+        }
+        
+        & input::placeholder { color: var(--input-placeholder);}
+        
+        
     }
     
     .search-btn-wrapper {
