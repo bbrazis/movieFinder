@@ -300,18 +300,27 @@ main {
         text-align: center;
         max-width: 27ch;
         font-weight: 600;
+        
+        & a {
+            color: var(--text-color);
+            
+            & svg {
+                transition: color 200ms ease;
+            }
+        }
+        
+        & a:hover svg,
+        :focus-within svg {
+            color: var(--hover-color);
+        }
+        
+        & svg {
+            font-size: 4.45rem;
+        }
+        
     }
-
-    .main-load a {
-        color: var(--text-color);
-    }
-
-    .main-load a svg { transition: color 200ms ease; }
-
-    .main-load a:hover svg,
-    .main-load:focus-within svg {
-        color: var(--hover-color);
-    }
+    
+    /* .main-load */
 }
 
 ul.movie-list {
