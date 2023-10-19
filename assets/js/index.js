@@ -1,5 +1,5 @@
 import { url } from '/assets/js/yek.js'
-import { createElTag, createImgTag, createListing, populateListingByIndex } from '/assets/js/builders.js'
+import { populateListingByIndex } from '/assets/js/builders.js'
 
 const searchForm = document.getElementById('movie-search')
 const movieList = document.getElementById('movie-list')
