@@ -26,6 +26,7 @@
     
     /* dark mode colors */
     --dark-bg: #121212;
+    --dark-placeholder-color: #787878;
     --dark-input: #2e2e2f;
     --dark-button: #4b4b4b;
     --dark-svg: #9ca3af;
@@ -45,7 +46,7 @@
         --btn-color: var(--white);
         --btn-border: var(--btn-bg);
         --hover-text: var(--white);
-        --placeholder-color: var(--dark-input);
+        --placeholder-color: var(--dark-placeholder-color);
         --movie-description-color: var(--dark-descr);
         --movie-border: var(--dark-movie-border);
         --outline-color: rgba(255,255,255,.6);
