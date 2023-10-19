@@ -26,6 +26,7 @@ if(searchForm){
                         populateListingByIndex(movieList,item.imdbID)
                     }
                 } else {
+                    loader.classList.add('display-none')
                     placeholder.innerHTML = "Unable to find what you're looking for. Please try another search."
                     placeholder.classList.remove('display-none')
                 }
