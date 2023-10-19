@@ -1,20 +1,67 @@
 :root {
-    --text-color: #000000;
-    --bg-color: #ffffff;
+    --black: #000000;
+    --white: #ffffff;
+    --text-color: var(--black);
+    --outline-color: rgba(255,0,0,.6);
+    --bg-color: var(--white);
     --hover-color: red;
+    --hover-text: var(--bg-color);
     --dark-gray: #374151;
     --dk-lgt-gray: #6b7280;
     --gray: #9ca3af;
     --off-gray: #f9fafb;
     --lgt-gray: #d1d5db;
-    
+    --header-color: var(--white);
+    --input-svg: var(--gray);
+    --input-bg: var(--bg-color);
+    --input-border: var(--lgt-gray);
+    --btn-border: var(--input-border);
+    --btn-bg: var(--off-gray);
+    --btn-color: var(--dark-gray);
+    --placeholder-color: #dfdddd;
+    --movie-stats-color: var(--dark-gray);
+    --movie-description-color: var(--dk-lgt-gray);
+    --movie-border: var(--lgt-gray);
     --font-family: 'Inter', sans-serif;
+    
+    /* dark mode colors */
+    --dark-bg: #121212;
+    --dark-input: #2e2e2f;
+    --dark-button: #4b4b4b;
+    --dark-svg: #9ca3af;
+    --dark-descr: #a5a5a5;
+    --dark-movie-border: #2c2c2c;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: var(--dark-bg);
+        --text-color: var(--white);
+        --movie-stats-color: var(--white);
+        --input-bg: var(--dark-input);
+        --input-svg: var(--dark-svg);
+        --input-border: var(--input-bg);
+        --btn-bg: var(--dark-button);
+        --btn-color: var(--white);
+        --btn-border: var(--btn-bg);
+        --hover-text: var(--white);
+        --placeholder-color: var(--dark-input);
+        --movie-description-color: var(--dark-descr);
+        --movie-border: var(--dark-movie-border);
+        --outline-color: rgba(255,255,255,.6);
+    }
+}
+
+*::selection {
+    background: var(--text-color);
+    color: var(--bg-color);
 }
 
 *,
 *::before,
 *::after {
     box-sizing: border-box;
+    outline-color: var(--outline-color) !important;
 }
 
 html {
@@ -105,8 +152,8 @@ header {
     justify-content: center;
     align-items: center;
     height: clamp(200px, 40dvh, 400px);
-    color: var(--bg-color);
-    background: var(--text-color);
+    color: var(--header-color);
+    background: var(--black);
     font-weight: 700;
     
     .container {
@@ -163,14 +210,14 @@ main {
         align-items: stretch;
         width: 100%;
         height: 38px;
-        border: 1px solid var(--lgt-gray);
+        /* border: 1px solid var(--lgt-gray); */
         border-radius: .325em;
         /* overflow: hidden; */
-        background: var(--bg-color);
+        background: var(--input-bg);
     }
     
     .search-input-wrapper svg {
-        color: var(--gray);
+        color: var(--input-svg);
         margin-inline-end: .5em;
     }
 
@@ -183,6 +230,7 @@ main {
     .search-input-wrapper input {
         color: var(--dk-lgt-gray);
         width: 100%;
+        background: var(--input-bg);
         line-height: 2;
     }
     
@@ -191,13 +239,20 @@ main {
         display: flex;
         align-items: center;
         padding-inline-start: 1em;
+        border: 1px solid var(--input-border);
+        border-bottom-left-radius: .325em;
+        border-top-left-radius: .325em;
     }
     
     .search-btn-wrapper {
         height: 100%;
-        border-inline-start: 1px solid var(--lgt-gray);
+        border-block-start: 1px solid var(--btn-border);
+        border-inline-end: 1px solid var(--btn-border);
+        border-block-end: 1px solid var(--btn-border);
         border-top-right-radius: .325em;
         border-bottom-right-radius: .325em;
+        transition: border-color 200ms ease,
+            background-color 200ms ease;
     }
     
     .search-btn-wrapper button {
@@ -205,25 +260,24 @@ main {
         padding: .5625rem 1.5rem;
         display: block;
         border: none;
-        background: var(--off-gray);
-        color: var(--dark-gray);
+        background: var(--btn-bg);
+        color: var(--btn-color);
         border-top-right-radius: .325em;
         border-bottom-right-radius: .325em;
         transition: background 200ms ease,
-            color 200ms ease,
-            border 200ms ease;
+            color 200ms ease;
     }
     
     .search-btn-wrapper button:hover,
     .search-btn-wrapper button:focus {
         background: var(--hover-color);
-        color: var(--bg-color);
-        border-color: var(--hover-color);
+        color: var(--hover-text);
     }
     
     .search-btn-wrapper:has( button:hover, button:focus ) {
-        outline: 1px solid var(--hover-color);
-        border-inline-start: none;
+        border-color: var(--hover-color);
+        background-color: var(--hover-color);
+        color: var(--hover-text);
     }
     
     .main-inner {
@@ -240,7 +294,10 @@ main {
         justify-content: center;
         align-items: center;
         gap: .5625rem;
-        color: #dfdddd;
+        color: var(--placeholder-color);
+        text-align: center;
+        max-width: 27ch;
+        font-weight: 600;
     }
 
     .main-load a {
@@ -260,6 +317,7 @@ ul.movie-list {
     display: grid;
     list-style: none;
     padding: 0;
+    color: var(--text-color);
     
     & li {
         display: flex;
@@ -268,7 +326,7 @@ ul.movie-list {
     }
     
     & li:not(:last-child) {
-        border-bottom: 1px solid var(--lgt-gray);
+        border-bottom: 1px solid var(--movie-border);
     }
     
     & img {
@@ -303,7 +361,7 @@ ul.movie-list {
         width: clamp(23.75rem,100%,28.75rem);
         justify-content: space-between;
         align-items: center;
-        color: var(--dark-gray);
+        color: var(--movie-stats-color);
         
         & p:first-child {
             width: 3.75rem;
@@ -319,6 +377,7 @@ ul.movie-list {
             border: none;
             cursor: pointer;
             display: flex;
+            color: var(--text-color);
             gap: .5em;
             align-items: center;
             
@@ -337,7 +396,7 @@ ul.movie-list {
     }
     
     .movie-description {
-        color: var(--dk-lgt-gray)
+        color: var(--movie-description-color);
     }
 }
 
@@ -363,9 +422,8 @@ footer {
             padding-inline-end: 1.5em;
         }
 
-        & li:last-child,
-        & li:nth-last-child(2) {
-            border-bottom: none;
+        & li:last-child {
+            border-bottom: 1px solid var(--movie-border) !important;
         }
     }
 
